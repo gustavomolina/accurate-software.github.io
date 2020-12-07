@@ -59,19 +59,25 @@ Nesta demonstração, foi cadastrado um produto por meio do endpoint "AddObject"
 
 #### Feature: Atualização de histórico de um “Achado”/”Perdido”
 Para esta demonstração, foi utilizado o endpoint "UpdateObject". Neste sentido, foram passados os dado do objeto a que se tem a intenção de atualizar, teste caso, o objeto de id igual a 5 (smartphone Xiaomi Note 8). Foram atualizados os camps de descrição do objeto e Local em que foi perdido. A seguir, pode-se ver que os dados foram persisitidos ao se fazer uma consulta de todos os objetos via endpoint "GelAllObjects"
+
 ![GIF Atualizar](ifound-api/gifs/gif_update_test_ifound.gif)
 
 #### Feature: Busca com opção de filtros
 Aqui, foi utilizado o endpoint "GetAllObjects" para a demonstração dos filtros. Estes foram implementados via pacote OData da Microsoft, que permite consultas personalizadas aos endpoints da API. Para demonstrar a eficiência dos filtros, primeiro fez-e uma consulta de todos osobjetos do endpoint. Logo após isso, fez-se ma consulta de todos os objetos que possuiam a propriedade "ObjectId" da entidade "Object" com valor igual a 5 adicionando-se para esta finalidade, a seguinte descrição à requisição:
 "$Filter=Object/ObjectId eq 5"
 A seguir, fez-se uma consulta dde todos os objetos que possuiam a propriedade "CategoryId" da entidade "ObjectCategory" com valor igual a 1 (categoria de roupas). Para isso, foi adicionada a seguinte descrição à requisição:
+
 ?$Filter=ObjectCategory/CategoryId eq 1
+
 ![GIF Filtros](ifound-api/gifs/gif_filter_test_ifound.gif)
 
 #### Feature: Relatório de cruzamento de informações “Achados”/”Perdidos”, dado um categoria e um raio
 Neste caso para se fazer um relatório com base na categoria e na localização dos objetos, foi feita uma consulta com o seguinte filtro:
+
 ?$Filter=ObjectCategory/CategoryId eq 3 and Object/ObjectLostLocation eq 'São José do Rio Preto / SP'
+
 Na demonstração, pode-se observar que foram encontrados dois produtos (tênis da Nike e Tênis da Adidas), ambos com id de categoria igual a 3 (sapatos) e tambeém ambos com localização de onde foram perdidos igual a 'São José do Rio Preto / SP'
+
 ![GIF Relatorio](ifound-api/gifs/gif_report_test_ifound.gif)
 
 
