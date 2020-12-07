@@ -36,7 +36,7 @@ Para a construção deste projeto, foram utilizadas as seguintes ferramentas:
 - [OData](https://www.odata.org/)
 
 ### Pré-requisitos
-Antes de começar, você precisará ter instaladas em sua máquina as seguintes ferramentas:
+Antes de começar, você precisará ter instalado em sua máquina as seguintes ferramentas:
 * Git (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * SDK Do ASP.NET Core Versão 3.1 (https://dotnet.microsoft.com/download/dotnet-core/3.1)
 * SQL Server LocalDB (https://docs.microsoft.com/pt-br/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver15) ou seu banco de dados de preferência
