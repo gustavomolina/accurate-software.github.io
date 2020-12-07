@@ -10,11 +10,11 @@ O projeto IFound trata-se de uma API REST para um site de achados e perdidos
 ## Tabela de conteúdos
 <!--ts-->
    * [Sobre](#sobre)
-   * [Tabela de Conteúdos](#tabela-de-conteudos)
+   * [Tabela de Conteúdos](#tabela-de-conteúdos)
    * [Features](#features)
    * [🛠 Tecnologias](#🛠-tecnologias)
-   * [Pré-requisitos](#pre-requisitos)
-   * [Rodando a aplicação](#rodando-a-aplicacao)  
+   * [Pré-requisitos](#pré-requisitos)
+   * [Rodando a aplicação](#rodando-a-aplicação)  
    * [Testes](#testes)
 <!--te-->
 
