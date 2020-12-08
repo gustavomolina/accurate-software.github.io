@@ -1,11 +1,11 @@
 <h1 align="center">IFound</h1>
-<p align="center">🚀 API REST para prover dados a um site de achados e perdidos</p>
+<p align="center">🚀 API REST densenvolvida em .NET Core!</p>
 <a href="https://accurate.com.br/">
 <img  src="https://img.shields.io/static/v1?label=API&message=Accurate&color=7159c1&style=for-the-badge&logo=ghost"/> 
 </a>
 
 ## Sobre
-O projeto IFound trata-se de uma API REST para um site de achados e perdidos
+O projeto IFound trata-se de uma API REST para prover dados a um site de achados e perdidos
 
 ## Tabela de conteúdos
 <!--ts-->
