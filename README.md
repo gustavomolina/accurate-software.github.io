@@ -32,7 +32,7 @@ Para a construção deste projeto, foram utilizadas as seguintes ferramentas:
 - [.NET Core](https://dotnet.microsoft.com/)
 - [Entity Framework Core](https://docs.microsoft.com/pt-br/ef/core/)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server)
-- [NUnit](https://nunit.org/)
+- [XUnit](https://xunit.net/)
 - [OData](https://www.odata.org/)
 
 ### Pré-requisitos
