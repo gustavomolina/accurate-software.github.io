@@ -69,14 +69,14 @@ Aqui, foi utilizado o endpoint "GetAllObjects" para a demonstração dos filtros
 
 A seguir, fez-se uma consulta dde todos os objetos que possuiam a propriedade "CategoryId" da entidade "ObjectCategory" com valor igual a 1 (categoria de roupas). Para isso, foi adicionada a seguinte descrição à requisição:
 
-?$Filter=ObjectCategory/CategoryId eq 1
+* _?$Filter=ObjectCategory/CategoryId eq 1_
 
 ![GIF Filtros](ifound-api/gifs/gif_filter_test_ifound.gif)
 
 #### Feature: Relatório de cruzamento de informações “Achados”/”Perdidos”, dado um categoria e um raio
 Neste caso para se fazer um relatório com base na categoria e na localização dos objetos, foi feita uma consulta com o seguinte filtro:
 
-?$Filter=ObjectCategory/CategoryId eq 3 and Object/ObjectLostLocation eq 'São José do Rio Preto / SP'
+* _?$Filter=ObjectCategory/CategoryId eq 3 and Object/ObjectLostLocation eq 'São José do Rio Preto / SP'_
 
 Na demonstração, pode-se observar que foram encontrados dois produtos (tênis da Nike e Tênis da Adidas), ambos com id de categoria igual a 3 (sapatos) e tambeém ambos com localização de onde foram perdidos igual a 'São José do Rio Preto / SP'
 
