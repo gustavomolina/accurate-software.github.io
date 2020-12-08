@@ -65,7 +65,7 @@ Para esta demonstração, foi utilizado o endpoint "UpdateObject". Neste sentido
 #### Feature: Busca com opção de filtros
 Aqui, foi utilizado o endpoint "GetAllObjects" para a demonstração dos filtros. Estes foram implementados via pacote OData da Microsoft, que permite consultas personalizadas aos endpoints da API. Para demonstrar a eficiência dos filtros, primeiro fez-e uma consulta de todos osobjetos do endpoint. Logo após isso, fez-se ma consulta de todos os objetos que possuiam a propriedade "ObjectId" da entidade "Object" com valor igual a 5 adicionando-se para esta finalidade, a seguinte descrição à requisição:
 
-*_"$Filter=Object/ObjectId eq 5"_
+* _"$Filter=Object/ObjectId eq 5"_
 
 A seguir, fez-se uma consulta dde todos os objetos que possuiam a propriedade "CategoryId" da entidade "ObjectCategory" com valor igual a 1 (categoria de roupas). Para isso, foi adicionada a seguinte descrição à requisição:
 
