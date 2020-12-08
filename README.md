@@ -73,7 +73,7 @@ A seguir, fez-se uma consulta de todos os objetos que possuiam a propriedade "Ca
 
 ![GIF Filtros](ifound-api/gifs/gif_filter_test_ifound.gif)
 
-#### Feature: Relatório de cruzamento de informações “Achados”/”Perdidos”, dado um categoria e um raio
+#### Feature: Relatório de cruzamento de informações “Achados”/”Perdidos”, dado uma categoria e um raio
 Por fim, para se demonstrar a última feature do backlog, foi feita uma consulta com o seguinte filtro:
 
 * _?$Filter=ObjectCategory/CategoryId eq 3 and Object/ObjectLostLocation eq 'São José do Rio Preto / SP'_
