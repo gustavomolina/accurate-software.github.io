@@ -50,35 +50,35 @@ Para instalar e rodar o projeto em sua máquina, siga os seguintes passos;
 * Dentro da pasta "ifound-api", rode o projeto via comando "dotnet run ifound-api.csproj"
 
 ### Testes
-As demonstrações dos testes foram todas feitas via ferramenta [Postman] (https://www.postman.com/). Para tal segue cada uma delas para cada feature presente no backlog do projeto:
+As demonstrações dos testes foram todas feitas via ferramenta Postman (https://www.postman.com/). Neste artigo, foi feita uma simples demonstração de funcionalidade para cada feature existente no backlog do projeto.
 
 #### Feature: Cadastro de um “Achado”/”Perdido”
-Nesta demonstração, foi cadastrado um produto por meio do endpoint "AddObject". A este endpoint foram passadas as informações do objeto, assim como sua categoria e dados das pessoas que perderam o objeto ou o encontraram (se existirem). Desse modo, o objeto foi registrado com o id de categoria igual a 3 (por ser da categproa sapato) e foram assosiados a ele os ids de pessoas que perderam e o encontraram 2 e 3 respectivamente.
+Para esta feature, foi feita uma demonstração com o cadastro de um produto por meio do endpoint "AddObject". A este endpoint foram passadas as informações do objeto, assim como sua categoria e dados das pessoas que perderam o objeto ou o encontraram. Desse modo, o objeto foi registrado com o id de categoria igual a 3 (por ser da categproa sapato) e foram assosiados a ele os ids 2 e 3 das pessoas que o perderam e o encontraram respectivamente.
 
 ![GIF Adicionar](ifound-api/gifs/gif_add_test_ifound.gif)
 
 #### Feature: Atualização de histórico de um “Achado”/”Perdido”
-Para esta demonstração, foi utilizado o endpoint "UpdateObject". Neste sentido, foram passados os dado do objeto a que se tem a intenção de atualizar, teste caso, o objeto de id igual a 5 (smartphone Xiaomi Note 8). Foram atualizados os camps de descrição do objeto e Local em que foi perdido. A seguir, pode-se ver que os dados foram persisitidos ao se fazer uma consulta de todos os objetos via endpoint "GelAllObjects"
+Pada demonstrar esta feature, foi utilizado o endpoint "UpdateObject". Neste sentido, foram passados os dados do objeto a que se tem a intenção de atualizar. Para isso, foi escolhido o objeto de id igual a 5 (Smartphone Xiaomi Note 8). Foram atualizados os campos de descrição do objeto e o local em que foi perdido. A seguir, pode-se ver que os dados foram persisitidos ao se fazer uma consulta de todos os objetos via endpoint "GelAllObjects".
 
 ![GIF Atualizar](ifound-api/gifs/gif_update_test_ifound.gif)
 
 #### Feature: Busca com opção de filtros
-Aqui, foi utilizado o endpoint "GetAllObjects" para a demonstração dos filtros. Estes foram implementados via pacote OData da Microsoft, que permite consultas personalizadas aos endpoints da API. Para demonstrar a eficiência dos filtros, primeiro fez-e uma consulta de todos osobjetos do endpoint. Logo após isso, fez-se ma consulta de todos os objetos que possuiam a propriedade "ObjectId" da entidade "Object" com valor igual a 5 adicionando-se para esta finalidade, a seguinte descrição à requisição:
+Na demonstração desta feature foi utilizado o endpoint "GetAllObjects" para se validar a funcionalidade dos filtros. Estes foram implementados via pacote OData da Microsoft, que permite consultas personalizadas aos endpoints da API. Para demonstrar a eficiência dos filtros, primeiro fez-e uma consulta de todos osobjetos do endpoint. Logo após isso, fez-se uma consulta de todos os objetos que possuiam a propriedade "ObjectId" da entidade "Object" com valor igual a 5. Para isso, foi incorpordado à URL da requisição os seguintes parâmetros:
 
 * _"$Filter=Object/ObjectId eq 5"_
 
-A seguir, fez-se uma consulta dde todos os objetos que possuiam a propriedade "CategoryId" da entidade "ObjectCategory" com valor igual a 1 (categoria de roupas). Para isso, foi adicionada a seguinte descrição à requisição:
+A seguir, fez-se uma consulta de todos os objetos que possuiam a propriedade "CategoryId" da entidade "ObjectCategory" com valor igual a 1 (categoria de roupas), mudando os parâmetros como o axemplo:
 
 * _?$Filter=ObjectCategory/CategoryId eq 1_
 
 ![GIF Filtros](ifound-api/gifs/gif_filter_test_ifound.gif)
 
 #### Feature: Relatório de cruzamento de informações “Achados”/”Perdidos”, dado um categoria e um raio
-Neste caso para se fazer um relatório com base na categoria e na localização dos objetos, foi feita uma consulta com o seguinte filtro:
+Por fim, para se demonstrar a última feature do backlog, foi feita uma consulta com o seguinte filtro:
 
 * _?$Filter=ObjectCategory/CategoryId eq 3 and Object/ObjectLostLocation eq 'São José do Rio Preto / SP'_
 
-Na demonstração, pode-se observar que foram encontrados dois produtos (tênis da Nike e Tênis da Adidas), ambos com id de categoria igual a 3 (sapatos) e tambeém ambos com localização de onde foram perdidos igual a 'São José do Rio Preto / SP'
+Com isso, temos um relatório dos objetos com base em sua categoria e localização. Na demonstração, pode-se observar que foram encontrados dois produtos (Tênis da Nike e Tênis da Adidas), ambos com id de categoria igual a 3 (sapatos) e tambeém ambos com localização de onde foram perdidos igual a 'São José do Rio Preto / SP'
 
 ![GIF Relatorio](ifound-api/gifs/gif_report_test_ifound.gif)
 
