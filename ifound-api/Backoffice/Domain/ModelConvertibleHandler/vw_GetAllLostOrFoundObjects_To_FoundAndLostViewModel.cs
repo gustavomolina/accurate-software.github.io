@@ -1,5 +1,4 @@
-﻿using ifound_api.Backoffice.Domain.Entity;
-using ifound_api.Backoffice.Domain.ViewModel;
+﻿using ifound_api.Backoffice.Domain.ViewModel;
 using Core.Model;
 using System;
 using System.Collections.Generic;

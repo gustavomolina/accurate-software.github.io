@@ -1,5 +1,4 @@
-﻿using ifound_api.Backoffice.Domain.Entity;
-using ifound_api.Backoffice.Domain.ViewModel;
+﻿using ifound_api.Backoffice.Domain.ViewModel;
 using Core.Business;
 using Core.IOC;
 using Core.Model;
@@ -16,8 +15,8 @@ namespace ifound_api.Backoffice.Domain.Business
     public interface ILostOrFoundBusiness
     {
         public IEnumerable<FoundOrLostViewModel> GetAllLostOrFoundObjects();
-        public void AddLostOrFoundObject(AddFoundOrLostViewModel objectData);
-        public void UpdateLostOrFoundObject(UpdateLostOrFoundViewModel objectData);
+        public Boolean AddLostOrFoundObject(AddFoundOrLostViewModel objectData);
+        public Boolean UpdateLostOrFoundObject(UpdateLostOrFoundViewModel objectData);
     }
 
     public class LostOrFoundBusiness : ILostOrFoundBusiness
@@ -27,7 +26,7 @@ namespace ifound_api.Backoffice.Domain.Business
         {
             _unitOfWork = unitOfWork;
         }
-        public void AddLostOrFoundObject(AddFoundOrLostViewModel objectData)
+        public Boolean AddLostOrFoundObject(AddFoundOrLostViewModel objectData)
         {
             _unitOfWork.Context.LoadStoredProc("dbo.sp_AddFoundOrLost")
                                                                .AddParam("ObjectName", objectData.ObjectName)
@@ -43,12 +42,14 @@ namespace ifound_api.Backoffice.Domain.Business
                                                                .AddParam("PersonWhoLost_FK", objectData.PersonWhoLostId)
                                                                .AddParam("SuccessOnAdding", out IOutParam<int?> SuccessOnAdding)
                                                                .ExecNonQuery();
-            if(SuccessOnAdding.Value == 0)
+            if (SuccessOnAdding.Value == 0)
                 throw new ApiValidationException("Erro no processo de inserção do objeto no sistema. Verifique os dados do mesmo!");
+            else
+                return true;
 
         }
 
-        public void UpdateLostOrFoundObject(UpdateLostOrFoundViewModel objectData)
+        public Boolean UpdateLostOrFoundObject(UpdateLostOrFoundViewModel objectData)
         {
             _unitOfWork.Context.LoadStoredProc("dbo.sp_UpdateFoundOrLost")
                                                                .AddParam("ObjectId", objectData.ObjectId)
@@ -67,6 +68,8 @@ namespace ifound_api.Backoffice.Domain.Business
                                                                .ExecNonQuery();
             if (SuccessOnUpdating.Value == 0)
                 throw new ApiValidationException("Erro no processo de atualização dos dados do objeto no sistema!");
+            else
+                return true;
         }
 
         public IEnumerable<FoundOrLostViewModel> GetAllLostOrFoundObjects()

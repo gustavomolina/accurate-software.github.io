@@ -2,7 +2,6 @@ using System;
 using Core.AspNetIdentity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 
 namespace ifound_api
 {
@@ -12,16 +11,9 @@ namespace ifound_api
     {
         [HttpGet]
         [AllowAnonymous]
-        public object Get([FromServices] IConfiguration configuration)
+        public ActionResult Get()
         {
-            return new
-            {
-                Local = Environment.MachineName,
-                Versao = configuration["Versao"],
-                Production = configuration["Production"],
-                Date = DateTime.Now.Date,
-                DateTime = DateTime.Now
-            };
+            return View();
         }
     }
 }

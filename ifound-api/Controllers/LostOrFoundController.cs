@@ -39,9 +39,11 @@ namespace ifound_api.Controllers
             if (ModelState.IsValid)
             {
                 ILostOrFoundBusiness lostOrFoundObjectsBusiness = DependencyResolution.Instance.GetInstance<ILostOrFoundBusiness>();
-                lostOrFoundObjectsBusiness.AddLostOrFoundObject(model);
-
-                return Ok();
+                Boolean success = lostOrFoundObjectsBusiness.AddLostOrFoundObject(model);
+                if(success)
+                    return Ok();
+                else
+                    throw new ApiValidationException("Error to add object in the database!");
             }
             else
                 throw new ApiValidationException(ModelState);
@@ -55,9 +57,11 @@ namespace ifound_api.Controllers
             if (ModelState.IsValid)
             {
                 ILostOrFoundBusiness lostOrFoundObjectsBusiness = DependencyResolution.Instance.GetInstance<ILostOrFoundBusiness>();
-                lostOrFoundObjectsBusiness.UpdateLostOrFoundObject(model);
-
-                return Ok();
+                Boolean success = lostOrFoundObjectsBusiness.UpdateLostOrFoundObject(model);
+                if(success)
+                    return Ok();
+                else
+                    throw new ApiValidationException("Error to update object in the database!");
             }
             else
                 throw new ApiValidationException(ModelState);
