@@ -50,7 +50,7 @@ Para instalar e rodar o projeto em sua máquina, siga os seguintes passos;
 * Dentro da pasta "ifound-api", rode o projeto via comando "dotnet run ifound-api.csproj"
 
 ### Testes
-As demonstrações dos testes foram todas feitas via ferramenta Postman. Para tal segue cada uma delas para cada feature presente no backlog do projeto:
+As demonstrações dos testes foram todas feitas via ferramenta [Postman] (https://www.postman.com/). Para tal segue cada uma delas para cada feature presente no backlog do projeto:
 
 #### Feature: Cadastro de um “Achado”/”Perdido”
 Nesta demonstração, foi cadastrado um produto por meio do endpoint "AddObject". A este endpoint foram passadas as informações do objeto, assim como sua categoria e dados das pessoas que perderam o objeto ou o encontraram (se existirem). Desse modo, o objeto foi registrado com o id de categoria igual a 3 (por ser da categproa sapato) e foram assosiados a ele os ids de pessoas que perderam e o encontraram 2 e 3 respectivamente.
