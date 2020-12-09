@@ -1,0 +1,68 @@
+<div class="list row">
+  <!-- <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar pelo nome"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div> -->
+  <div class="col-md-6">
+    <h4>Lista de Achados e Perdidos</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let tutorial of tutorials; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(tutorial, i)"
+      >
+        {{ tutorial.Object.ObjectName }}
+      </li>
+    </ul>
+
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentTutorial">
+      <h4>Tutorial</h4>
+      <div>
+        <label><strong>Nome:</strong></label> 
+        {{ currentTutorial.Object.ObjectName }}
+      </div>
+
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.Object.ObjectStatus }}
+      </div>
+
+      <div>
+        <label><strong>Achou:</strong></label>
+        {{ currentTutorial.PersonWhoFound.Name }}
+      </div>
+
+      <div>
+        <label><strong>Perdeu:</strong></label>
+        {{ currentTutorial.PersonWhoLost.Name }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial.Object.ObjectId }}">
+        Editar
+      </a>
+    </div>
+
+    <div *ngIf="!currentTutorial">
+      <br />
+      <p>Selecione um objeto</p>
+    </div>
+  </div>
+</div>

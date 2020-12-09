@@ -1,0 +1,101 @@
+<div style="width: 400px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="ObjectName">Nome do Objeto</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ObjectName"
+          required
+          [(ngModel)]="object.ObjectName"
+          name="ObjectName"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="ObjectDescription">Descrição</label>
+        <input
+          class="form-control"
+          id="ObjectDescription"
+          required
+          [(ngModel)]="object.ObjectDescription"
+          name="ObjectDescription"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Status</label>
+        <input
+          class="form-control"
+          id="ObjectStatus"
+          required
+          [(ngModel)]="object.ObjectStatus"
+          name="ObjectStatus"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Onde Foi Perdido</label>
+        <input
+          class="form-control"
+          id="ObjectLostLocation"
+          required
+          [(ngModel)]="object.ObjectLostLocation"
+          name="ObjectLostLocation"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Onde Foi Encontrado</label>
+        <input
+          class="form-control"
+          id="ObjectFoundLocation"
+          required
+          [(ngModel)]="object.ObjectFoundLocation"
+          name="ObjectFoundLocation"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">ID Categoria</label>
+        <input
+          class="form-control"
+          id="CategoryId"
+          required
+          [(ngModel)]="object.CategoryId"
+          name="CategoryId"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">ID da pessoa que encontrou</label>
+        <input
+          class="form-control"
+          id="PersonWhoFoundId"
+          required
+          [(ngModel)]="object.PersonWhoFoundId"
+          name="PersonWhoFoundId"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">ID da pessoa que perdeu</label>
+        <input
+          class="form-control"
+          id="PersonWhoLostId"
+          required
+          [(ngModel)]="object.PersonWhoLostId"
+          name="PersonWhoLostId"
+        />
+      </div>
+
+      <button (click)="saveTutorial()" class="btn btn-success">Salvar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Objeto cadastrado com sucesso!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Continuar</button>
+    </div>
+  </div>
+</div>

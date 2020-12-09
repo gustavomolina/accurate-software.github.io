@@ -1,0 +1,79 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="object" class="edit-form">
+    <h4>Tutorial</h4>
+    <form>
+      <div class="form-group">
+        <label for="ObjectName">Nome do Objeto</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ObjectName"
+          required
+          [(ngModel)]="object.ObjectName"
+          name="ObjectName"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="ObjectDescription">Descrição</label>
+        <input class="form-control" id="ObjectDescription" required [(ngModel)]="object.ObjectDescription"
+          name="ObjectDescription" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Status</label>
+        <input class="form-control" id="ObjectStatus" required [(ngModel)]="object.ObjectStatus" name="ObjectStatus" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Onde Foi Perdido</label>
+        <input class="form-control" id="ObjectLostLocation" required [(ngModel)]="object.ObjectLostLocation"
+          name="ObjectLostLocation" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Onde Foi Encontrado</label>
+        <input class="form-control" id="ObjectFoundLocation" required [(ngModel)]="object.ObjectFoundLocation"
+          name="ObjectFoundLocation" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">ID Categoria</label>
+        <input class="form-control" id="CategoryId" required [(ngModel)]="object.CategoryId" name="CategoryId" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">ID da pessoa que encontrou</label>
+        <input class="form-control" id="PersonWhoFoundId" required [(ngModel)]="object.PersonWhoFoundId"
+          name="PersonWhoFoundId" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">ID da pessoa que perdeu</label>
+        <input class="form-control" id="PersonWhoLostId" required [(ngModel)]="object.PersonWhoLostId"
+          name="PersonWhoLostId" />
+      </div>
+    </form>
+
+    <!-- <button class="badge badge-primary mr-2" *ngIf="currentTutorial.published" (click)="updatePublished(false)">
+      UnPublish
+    </button>
+    <button *ngIf="!currentTutorial.published" class="badge badge-primary mr-2" (click)="updatePublished(true)">
+      Publish
+    </button>
+
+    <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+      Delete
+    </button> -->
+
+    <button type="submit" class="badge badge-success" (click)="updateTutorial()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!object">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</div>
